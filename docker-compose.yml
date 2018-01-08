@@ -59,7 +59,8 @@ services:
 #      PHP_XDEBUG_TRACE_OUTPUT_DIR: /mnt/files/xdebug/traces
 #      PHP_BLACKFIRE: 1
     volumes:
-      - codebase:/var/www/html
+#      - codebase:/var/www/html
+      - ./:/var/www/html
 # Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
 #      - codebase:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
@@ -83,8 +84,9 @@ services:
       NGINX_SERVER_ROOT: /var/www/html/web
 #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
-      - codebase:/var/www/html
-# Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
+#      - codebase:/var/www/html
+      - ./:/var/www/html
+## Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
 #      - codebase:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
     labels:
