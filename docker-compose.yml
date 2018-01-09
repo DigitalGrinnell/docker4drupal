@@ -9,9 +9,9 @@ services:
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
-#    volumes:
-#      - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
-#      - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
+    volumes:
+      - ./mariadb-init:/docker-entrypoint-initdb.d      # Place init .sql file(s) here.
+#      - /path/to/mariadb/data/on/host:/var/lib/mysql   # I want to manage volumes manually.
 
 #  postgres:
 #    image: wodby/postgres:10.1-1.2.0
@@ -80,7 +80,7 @@ services:
       NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
       NGINX_ERROR_LOG_LEVEL: debug
       NGINX_BACKEND_HOST: php
-      NGINX_SERVER_ROOT: /var/www/html/web
+      NGINX_SERVER_ROOT: /var/www/html
 #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
 #      - codebase:/var/www/html
